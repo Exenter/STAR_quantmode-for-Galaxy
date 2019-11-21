@@ -1,0 +1,39 @@
+<tool id="ca_jp_STAR" name="Run_STAR" version="2.7.3a">
+  <description> From a reference genome and reads </description>
+  <command interpreter="bash"><![CDATA[ca_jp_STAR.sh $genome_ref_fasta $genome_ref_gtf
+  #if $pair_single_end.pair_end == "F":
+      $pair_single_end.reads > $logs;
+  #else:
+    $pair_single_end.reads_1 $pair_single_end.reads_2 > $logs;
+  #end if
+  cat ReadsPerGene.out.tab>$output;
+  ]]></command>
+
+<inputs>
+    <param format="fasta" name="genome_ref_fasta" type="data" label="Reference genome (fasta)" />
+    <param format="gff" name="genome_ref_gtf" type="data" label="Reference genome (gtf)" />
+  <conditional name="pair_single_end" >
+    <param name="pair_end" type = "select" help = "Pair or single end sequencing ?" label = "Pair or single end sequencing ?" >
+        <option value = "T"> Pair </option>
+        <option value = "F"> Single </option>
+    </param>
+    <when value = "F"> 
+        <param format="fastq" name="reads" type="data" label="Reads file"/>
+    </when>
+    <when value = "T">
+        <param format="fastq" name="reads_1" type="data" label="Reads_1 file" />
+        <param format="fastq" name="reads_2" type="data" label="Reads_2 file" />
+    </when>
+  </conditional>
+</inputs>
+  
+<outputs>
+  <data format="txt" name="logs" label ="Logs.txt" />
+  <data format="tabular" name="output" label="ReadsPerGene.tab" />
+</outputs>
+
+<help>
+  This. Is. STAR.
+</help>
+ 
+</tool>
