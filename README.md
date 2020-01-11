@@ -1,4 +1,5 @@
 # STAR_quantmode-for-Galaxy
+Autors : ALI Cheryn & PERNET Julien (M2 BBS Toulouse 2019)
 
 # What is it ?
 This is a bash wrapper of Star quantmode, for single or paired-end reads. It's meant to be integrated in Galaxy.
