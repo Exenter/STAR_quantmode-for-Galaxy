@@ -1,5 +1,19 @@
+<!-- 
+Copyright 2019 Ali Cheryn & PERNET Julien
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <tool id="ca_jp_STAR" name="Run_STAR" version="2.7.3a">
-  <description> From a reference genome and reads </description>
+  <description> STAR Quantification mode </description>
   <command interpreter="bash"><![CDATA[ca_jp_STAR.sh $genome_ref_fasta $genome_ref_gtf
   #if $pair_single_end.pair_end == "F":
       $pair_single_end.reads > $logs;
@@ -33,7 +47,10 @@
 </outputs>
 
 <help>
-  This. Is. STAR.
+  STAR build-in quantification for single or paired end reads. Following these steps :
+  * Indexing the genome
+  * Reads mapping
+  * Quantification
 </help>
  
 </tool>
