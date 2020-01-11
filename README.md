@@ -1,7 +1,7 @@
 # STAR_quantmode-for-Galaxy
 
 # What is it ?
-This is a bash wrapper of Star quantmode. It's meant to be integrated in Galaxy.
+This is a bash wrapper of Star quantmode, for single or paired-end reads. It's meant to be integrated in Galaxy.
 You can find the STAR documentation in their git : https://github.com/alexdobin/STAR
 
 # How to use it ?
@@ -23,8 +23,8 @@ Plug it all in through Galaxy and after some time you get a quantification file,
 ```
 column 1: gene ID
 column 2: counts for unstranded RNA-seq
-column 3: counts for the 1st read strand aligned with RNA (htseq-count option -s yes)
-column 4: counts for the 2nd read strand aligned with RNA (htseq-count option -s reverse)
+column 3: counts for the 1st read strand aligned with RNA (equivalent to htseq-count option -s yes)
+column 4: counts for the 2nd read strand aligned with RNA (equivalent to htseq-count option -s reverse)
 ```
 
 # Data
