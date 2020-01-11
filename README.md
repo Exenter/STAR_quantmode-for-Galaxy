@@ -3,17 +3,18 @@
 # What is it ?
 This is a bash wrapper of Star quantmode, for single or paired-end reads. It's meant to be integrated in Galaxy.
 You can find the STAR documentation in their git : https://github.com/alexdobin/STAR
+And Galaxy documentation here : https://galaxyproject.org/
 
 # How to use it ?
-Add this section to your tool_conf.yml :
+Add this section to your tool_conf.yml in the galaxy repository:
 ```
  <section id="PROJET" name="Ca_jp_STAR">
     <tool file ="ca_jp_projet/ca_jp_STAR.xml" />
  </section>
   ```
-Add provided files in the tool repertory , in a folder named "/ca_jp_projet".
+Add provided scripts in the tool repertory , in a folder named "/ca_jp_projet".
 
-Then change the path to you local STAR instance and genome directory in the STAR.sh file.
+Then change the path to your local STAR instance and genome directory in the ca_jp_STAR.sh file.
 
 Done.
 
